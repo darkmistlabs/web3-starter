@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'CircularStd';
+  font-weight: 400;
+  font-style: normal;
+  src: local('CircularStd'), url('CircularStd-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  font-weight: 500;
+  font-style: normal;
+  src: local('CircularStd'), url('CircularStd-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  font-weight: 700;
+  font-style: normal;
+  src: local('CircularStd'), url('CircularStd-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "阿里妈妈数黑体 Bold";
+  font-weight: 700;
+  src: url("//at.alicdn.com/wf/webfont/x4qO8ekWUL71/LsoE28rw61VVxgJC-H3dF.woff2") format("woff2"),
+    url("//at.alicdn.com/wf/webfont/x4qO8ekWUL71/RTxtQBHgspFuzJksQ6p_5.woff") format("woff");
+  font-display: swap;
+}
