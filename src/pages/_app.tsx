@@ -33,8 +33,6 @@ import { ThemeSettings, SettingsProvider } from '../components/settings';
 // Check our docs
 // https://docs.minimals.cc/authentication/ts-version
 
-import { AuthProvider } from '../auth/JwtContext';
-
 // ----------------------------------------------------------------------
 
 const clientSideEmotionCache = createEmotionCache();
@@ -59,20 +57,18 @@ export default function MyApp(props: MyAppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
 
-      <AuthProvider>
-        <SettingsProvider>
-          <MotionLazyContainer>
-            <ThemeProvider>
-              <ThemeLocalization>
-                <SnackbarProvider>
-                  <ProgressBar />
-                  {getLayout(<Component {...pageProps} />)}
-                </SnackbarProvider>
-              </ThemeLocalization>
-            </ThemeProvider>
-          </MotionLazyContainer>
-        </SettingsProvider>
-      </AuthProvider>
+      <SettingsProvider>
+        <MotionLazyContainer>
+          <ThemeProvider>
+            <ThemeLocalization>
+              <SnackbarProvider>
+                <ProgressBar />
+                {getLayout(<Component {...pageProps} />)}
+              </SnackbarProvider>
+            </ThemeLocalization>
+          </ThemeProvider>
+        </MotionLazyContainer>
+      </SettingsProvider>
     </CacheProvider>
   );
 }
