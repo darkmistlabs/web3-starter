@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cs-apps-afchina
+spec:
+  selector:
+    matchLabels:
+      app: cs-apps-afchina
+  replicas: 1
+  revisionHistoryLimit: 0
+  template:
+    metadata:
+      labels:
+        app: cs-apps-afchina
+    spec:
+      containers:
+      - name: cs-apps-afchina
+        image: __AWS_ECR_REGISTRY__/coinsummer/afchina:__TAG__
+        ports:
+        - containerPort: 3000
+      imagePullSecrets:
+      - name: regcred
