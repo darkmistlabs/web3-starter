@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cs-apps-afchina
+  name: cs-apps-web-starter
 spec:
   selector:
     matchLabels:
-      app: cs-apps-afchina
+      app: cs-apps-web-starter
   replicas: 1
   revisionHistoryLimit: 0
   template:
     metadata:
       labels:
-        app: cs-apps-afchina
+        app: cs-apps-web-starter
     spec:
       containers:
-      - name: cs-apps-afchina
-        image: __AWS_ECR_REGISTRY__/coinsummer/afchina:__TAG__
+      - name: cs-apps-web-starter
+        image: __AWS_ECR_REGISTRY__/coinsummer/web3-starter:__TAG__
         ports:
         - containerPort: 3000
       imagePullSecrets:
