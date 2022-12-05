@@ -45,7 +45,8 @@ steps:
     image: danielgormly/drone-plugin-kube:0.0.1
     settings: 
       template: ci/deploy.yaml
-      namespace: cs-razzil
+      namespace:
+        from_secret: deploy_namespace
       server:
         from_secret: kubernetes_server
       ca:
