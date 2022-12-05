@@ -3,7 +3,9 @@ import { forwardRef } from 'react';
 // next
 import NextLink from 'next/link';
 // @mui
-import { Link, LinkProps, CardActionArea } from '@mui/material';
+import { Link, LinkProps, CardActionArea, Typography } from '@mui/material';
+// locales
+import { useLocales } from '../../../../locales';
 // components
 import Image from '../../../../components/image';
 import Iconify from '../../../../components/iconify';
@@ -16,6 +18,7 @@ import { ListItem } from './styles';
 export const NavItem = forwardRef<HTMLDivElement, NavItemDesktopProps>(
   ({ item, open, isOffset, active, subItem, isExternalLink, ...other }, ref) => {
     const { title, path, children } = item;
+    const { translate } = useLocales()
 
     const renderContent = (
       <ListItem
@@ -27,7 +30,7 @@ export const NavItem = forwardRef<HTMLDivElement, NavItemDesktopProps>(
         open={open}
         {...other}
       >
-        {title}
+        {`${translate(title)}`}
 
         {!!children && (
           <Iconify

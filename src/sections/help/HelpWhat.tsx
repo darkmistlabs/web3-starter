@@ -16,11 +16,11 @@ const StyledRoot = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function AboutWhat() {
+export default function HelpWhat() {
   return (
     <StyledRoot>
       <Container component={MotionViewport}>
-        <Typography variant="h1">About Us</Typography>
+        <Typography variant="h1">Need Help</Typography>
       </Container>
     </StyledRoot>
   );

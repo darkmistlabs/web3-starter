@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
-const withVideos = require('next-videos')
 
-module.exports = withVideos({
+module.exports = {
   swcMinify: false,
   trailingSlash: true,
   env: {
     // HOST
     HOST_API_KEY: 'https://api-dev-minimal-v4.vercel.app',
   },
-});
+}

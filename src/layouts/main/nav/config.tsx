@@ -5,19 +5,19 @@ import Iconify from '../../../components/iconify';
 
 const navConfig = [
   {
-    title: '首页',
+    title: 'navbar.home',
     icon: <Iconify icon="eva:home-fill" />,
     path: '/',
   },
   {
-    title: '关于我们',
+    title: 'navbar.about',
     icon: <Iconify icon="ic:round-grain" />,
     path: '/about',
   },
   {
-    title: '认证教练',
+    title: 'navbar.help',
     icon: <Iconify icon="eva:book-open-fill" />,
-    path: '/master',
+    path: '/help',
   },
 ];
 

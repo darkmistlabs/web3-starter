@@ -1,9 +1,8 @@
 // next
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 // @mui
 import { Box } from '@mui/material';
-import Header from './Header'
+import Header from './header/Header'
 import Footer from './Footer'
 
 // ----------------------------------------------------------------------

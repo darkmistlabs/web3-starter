@@ -1,3 +1,6 @@
+// global
+import '../styles/globals.css'
+
 // i18n
 import '../locales/i18n';
 
@@ -6,10 +9,6 @@ import 'simplebar/src/simplebar.css';
 
 // lazy image
 import 'react-lazy-load-image-component/src/effects/blur.css';
-
-// slick-carousel
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 // ----------------------------------------------------------------------
 
@@ -28,10 +27,7 @@ import ThemeLocalization from '../locales';
 import ProgressBar from '../components/progress-bar';
 import SnackbarProvider from '../components/snackbar';
 import { MotionLazyContainer } from '../components/animate';
-import { ThemeSettings, SettingsProvider } from '../components/settings';
-
-// Check our docs
-// https://docs.minimals.cc/authentication/ts-version
+import { SettingsProvider } from '../components/settings';
 
 // ----------------------------------------------------------------------
 

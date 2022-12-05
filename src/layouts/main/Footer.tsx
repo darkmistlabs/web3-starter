@@ -67,24 +67,8 @@ export default function Footer() {
             },
           }}
         >
-          <Grid item xs={12} md={2}>
+          <Grid item xs={12} md={4}>
             <Logo height={24} fontSize={20} sx={{ mx: { xs: 'auto', md: 'inherit' } }} />
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-            <Stack
-              spacing={2}
-              direction="row"
-              alignItems={{ xs: 'flex-start', md: 'flex-end' }}
-            >
-              {SOCIAL_LINKS.map((social, i) => (
-                <Link key={i} href={social.path} target="_blank" rel="noopener" underline="none">
-                  <IconButton key={social.name} size="large">
-                    <Iconify icon={social.icon} width={28} />
-                  </IconButton>
-                </Link>
-              ))}
-            </Stack>
           </Grid>
 
           <Grid item xs={12} md={4}>
@@ -97,7 +81,7 @@ export default function Footer() {
                   pb: 2,
                 }}
               >
-                Copyright &copy; 2022 <Link href="https://animalflow.com.cn" color={theme.palette.primary.light}>AnimalFlowChina.com</Link>
+                Copyright &copy; 2022 <Link href="https://darkmistlabs.io">DarkMistLabs</Link>
               </Typography>
             </Stack>
           </Grid>

@@ -2,20 +2,22 @@
 import { useTheme } from '@mui/material/styles';
 import { Box, Button, AppBar, Toolbar, Container, Link, BoxProps, Stack } from '@mui/material';
 // hooks
-import useOffSetTop from '../../hooks/useOffSetTop';
-import useResponsive from '../../hooks/useResponsive';
+import useOffSetTop from '../../../hooks/useOffSetTop';
+import useResponsive from '../../../hooks/useResponsive';
 // utils
-import { bgBlur } from '../../utils/cssStyles';
+import { bgBlur } from '../../../utils/cssStyles';
 // config
-import { HEADER } from '../../config';
+import { HEADER } from '../../../config';
+// layouts
+import NavMobile from '../nav/mobile';
+import navConfig from '../nav/config';
+import NavDesktop from '../nav/desktop';
+
 // routes
 // components
-import Logo from '../../components/logo';
+import Logo from '../../../components/logo';
+import LanguagePopover from './LanguagePopover'
 
-// layouts
-import NavMobile from './nav/mobile';
-import navConfig from './nav/config';
-import NavDesktop from './nav/desktop';
 
 // ----------------------------------------------------------------------
 
@@ -60,6 +62,17 @@ export default function Header() {
           }
 
           <Box sx={{ flexGrow: 1 }} />
+
+          <Stack
+            flexGrow={1}
+            direction="row"
+            alignItems="center"
+            justifyContent="flex-end"
+            spacing={{ xs: 0.5, sm: 1.5 }}
+          >
+            <LanguagePopover />
+
+          </Stack>
 
           {!isDesktop && <NavMobile isOffset={isOffset} data={navConfig} />}
         </Container>

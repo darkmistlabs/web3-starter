@@ -1,21 +1,21 @@
 import Head from 'next/head'
 import MainLayout from '../layouts/main'
-import AboutWhat from '../sections/about/AboutWhat'
+import HelpWhat from '../sections/help/HelpWhat'
 
 interface Props {
   datasource: any[]
 }
 
-AboutPage.getLayout = (page: React.ReactElement) => <MainLayout> {page} </MainLayout>;
+HelpPage.getLayout = (page: React.ReactElement) => <MainLayout> {page} </MainLayout>;
 
-export default function AboutPage({ datasource }: Props) {
+export default function HelpPage({ datasource }: Props) {
   return (
     <>
       <Head>
-        <title>About | Web3 APP Starter</title>
+        <title>Help | Web3 APP Starter</title>
       </Head>
 
-      <AboutWhat />
+      <HelpWhat />
     </>
   )
 }
@@ -23,7 +23,7 @@ export default function AboutPage({ datasource }: Props) {
 
 export async function getServerSideProps() {
   const datasource: any[] = []
-  
+
   return {
     props: {
       datasource,
