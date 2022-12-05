@@ -10,6 +10,7 @@ import Image from '../../components/image';
 import Iconify from '../../components/iconify';
 import Carousel, { CarouselArrows } from '../../components/carousel';
 import { MotionViewport, varFade } from '../../components/animate';
+import { Router, useRouter } from 'next/router';
 
 // ----------------------------------------------------------------------
 
@@ -19,9 +20,9 @@ const StyledRoot = styled('section')(({ theme }) => ({
 }));
 
 export default function HomeMaster() {
-  const carouselRef = useRef<Carousel>(null);
-
-  const theme = useTheme();
+  const carouselRef = useRef<Carousel>(null)
+  const theme = useTheme()
+  const router = useRouter()
 
   const carouselSettings = {
     infinite: true,
@@ -83,13 +84,17 @@ export default function HomeMaster() {
             onPrevious={handlePrev}
             leftButtonProps={{
               sx: {
-                left: 24,
+                left: -35,
+                color: 'text.secondary',
+                backgroundColor: 'grey.800',
                 ...(_carouselsMembers.length < 5 && { display: 'none' }),
               },
             }}
             rightButtonProps={{
               sx: {
-                right: 24,
+                right: -35,
+                color: 'text.secondary',
+                backgroundColor: 'grey.800',
                 ...(_carouselsMembers.length < 5 && { display: 'none' }),
               },
             }}
@@ -115,6 +120,7 @@ export default function HomeMaster() {
           size="large"
           endIcon={<Iconify icon="ic:round-arrow-right-alt" width={24} />}
           sx={{ mx: 'auto' }}
+          onClick={() => router.push('/master')}
         >
           所有认证教练
         </Button>
@@ -127,30 +133,39 @@ export default function HomeMaster() {
 
 type MemberCardProps = {
   member: {
-    name: string;
-    role: string | undefined;
-    avatar: string;
+    id: string
+    name: string
+    role: string | undefined
+    avatar: string
   };
 };
 
 function MemberCard({ member }: MemberCardProps) {
-  const { name, role, avatar } = member;
+  const { id, name, role, avatar } = member
+  const router = useRouter()
   return (
     <Card key={name}>
+      <Box>
+        <Image alt={name} src={avatar} ratio="1/1" />
+      </Box>
+
       <Typography variant="h5" sx={{ mt: 3, mb: 0.5 }}>
         {name}
       </Typography>
 
-      <Typography variant="body2" sx={{ mb: 2, color: 'text.secondary' }}>
+      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
         {role}
       </Typography>
 
-      <Box sx={{ px: 1 }}>
-        <Image alt={name} src={avatar} ratio="1/1" sx={{ borderRadius: 2 }} />
-      </Box>
-
       <Stack direction="row" alignItems="center" justifyContent="center" sx={{ p: 2 }}>
-        {_socials.map((social) => (
+        <Button
+          variant="outlined"
+          color="inherit"
+          onClick={() => router.push(`/master/${id}`)}
+        >
+          了解更多
+        </Button>
+        {/* {_socials.map((social) => (
           <IconButton
             key={social.name}
             sx={{
@@ -162,7 +177,7 @@ function MemberCard({ member }: MemberCardProps) {
           >
             <Iconify icon={social.icon} />
           </IconButton>
-        ))}
+        ))} */}
       </Stack>
     </Card>
   );

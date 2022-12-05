@@ -15,28 +15,22 @@ import Iconify from '../../components/iconify';
 
 const SOCIAL_LINKS = [
   {
-    value: 'telegram',
-    name: 'Telegram',
-    icon: 'file-icons:telegram',
-    path: 'https://t.me/+TOGYnsZ2itA0NGZl',
-  },
-  {
-    value: 'discord',
-    name: 'Discord',
-    icon: 'akar-icons:discord-fill',
-    path: 'https://discord.gg/PphEmhTF2D',
-  },
-  {
-    value: 'github',
-    name: 'Github',
-    icon: 'bi:github',
-    path: 'https://github.com/minerdao',
+    value: 'weibo',
+    name: '微博',
+    icon: 'mdi:sina-weibo',
+    path: '/',
   },
   {
     value: 'wechat',
-    name: 'Wechat',
+    name: '微信',
     icon: 'cib:wechat',
-    path: 'https://discord.gg/PphEmhTF2D',
+    path: '/',
+  },
+  {
+    value: 'tiktok',
+    name: '抖音',
+    icon: 'ic:baseline-tiktok',
+    path: '/',
   },
 ];
 
@@ -65,6 +59,7 @@ export default function Footer() {
             xs: 'center',
             md: 'space-between',
           }}
+          alignItems="center"
           sx={{
             textAlign: {
               xs: 'center',
@@ -72,39 +67,40 @@ export default function Footer() {
             },
           }}
         >
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={2}>
             <Logo height={24} fontSize={20} sx={{ mx: { xs: 'auto', md: 'inherit' } }} />
+          </Grid>
+
+          <Grid item xs={12} md={6}>
             <Stack
               spacing={2}
               direction="row"
-              justifyContent={{ xs: 'center', md: 'flex-end' }}
-              sx={{ mt: 4 }}
+              alignItems={{ xs: 'flex-start', md: 'flex-end' }}
             >
               {SOCIAL_LINKS.map((social, i) => (
                 <Link key={i} href={social.path} target="_blank" rel="noopener" underline="none">
                   <IconButton key={social.name} size="large">
-                    <Iconify icon={social.icon} sx={{ width: 24, height: 24 }} />
+                    <Iconify icon={social.icon} width={28} />
                   </IconButton>
                 </Link>
               ))}
             </Stack>
           </Grid>
 
-          <Grid item xs={12} md={6}>
-            Link
+          <Grid item xs={12} md={4}>
+            <Stack alignItems="center" justifyContent="center" >
+              <Typography
+                variant="body1"
+                color={theme.palette.text.disabled}
+                sx={{
+                  mt: 1,
+                  pb: 2,
+                }}
+              >
+                Copyright &copy; 2022 <Link href="https://animalflow.com.cn" color={theme.palette.primary.light}>AnimalFlowChina.com</Link>
+              </Typography>
+            </Stack>
           </Grid>
-        </Grid>
-        <Grid>
-          <Typography
-            variant="body2"
-            color={theme.palette.text.disabled}
-            sx={{
-              mt: 1,
-              pb: 2,
-            }}
-          >
-            Copyright &copy; 2022 zkPool
-          </Typography>
         </Grid>
       </Container>
     </Box>

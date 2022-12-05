@@ -16,17 +16,17 @@ import SvgColor from '../../components/svg-color';
 import Iconify from '../../components/iconify';
 import { MotionContainer, varFade } from '../../components/animate';
 import Image from '../../components/image'
+import { useRouter } from 'next/router';
 // import { ArrowDown, HelpCircle } from 'react-feather';
 
 // ----------------------------------------------------------------------
 
 const StyledRoot = styled('section')(({ theme }) => ({
   position: 'relative',
-  backgroundColor: theme.palette.background.paper,
+  backgroundColor: theme.palette.grey[200],
 }));
 
 const StyledDescription = styled(Container)(({ theme }) => ({
-  // maxWidth: 800,
   margin: 'auto',
   display: 'flex',
   flexDirection: 'column',
@@ -35,6 +35,23 @@ const StyledDescription = styled(Container)(({ theme }) => ({
   padding: theme.spacing(10, 0),
   height: '100%',
 }));
+
+const StyledGridItem = styled(Box)(({ theme }) => ({
+  position: 'relative',
+}))
+
+const StyledGridAction = styled(Stack)(({ theme }) => ({
+  position: 'absolute',
+  bottom: 0,
+  padding: 20,
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: alpha(theme.palette.common.black, .8),
+}))
+
+const StyledGridButton = styled(Button)(({ theme }) => ({
+}))
 
 const StyledGradientText = styled(m.h1)(({ theme }) => ({
   padding: 0,
@@ -82,6 +99,7 @@ const StyledEllipseBottom = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function HomeAbout() {
+  
   const isDesktop = useResponsive('up', 'md');
 
   const { scrollYProgress } = useScroll();
@@ -100,34 +118,82 @@ export default function HomeAbout() {
 // ----------------------------------------------------------------------
 
 function Description() {
+  const theme = useTheme()
+  const router = useRouter()
+
   return (
     <StyledDescription>
       <m.div variants={varFade().in}>
-        <Typography variant="h2" sx={{ height: 70, textAlign: 'center' }}>
+        <Typography variant="h2" sx={{ height: 70, textAlign: 'center', color: theme.palette.grey[900] }}>
           AF中国教练培训官团队
         </Typography>
       </m.div>
 
       <m.div variants={varFade().in}>
-        <Typography variant="body2" sx={{ md: 4, height: 60, textAlign: 'center' }}>
-          The starting point for your next project is based on MUI.Easy customization Helps you
-          build apps faster and better.
-        </Typography>
+        <Stack sx={{ mb: 4, p: theme.spacing(0, 8),  }}>
+          <Typography variant="body2" sx={{ textAlign: 'center', color: theme.palette.grey[500] }}>
+            Animal Flow 是基于地面的运动，有趣、具有挑战性且有效。该系统旨在提高各级健身爱好者的力量、爆发力、灵活性、机动性和协调性。无论您是想自己锻炼、与专业人士一起训练，还是参加小组课程，Animal Flow 都能满足每个人的需求！
+          </Typography>
+        </Stack>
       </m.div>
-
       
       <Grid container rowSpacing={{ xs: 2, sm: 4, md: 6 }} columnSpacing={{ xs: 2, sm: 4, md: 6 }}>
         <Grid item xs={12} md={6}>
-          <Image src="/assets/images/home/about_img_1.png" />
+          <StyledGridItem>
+            <Image src="/assets/images/home/about_img_1.png" />
+            <StyledGridAction>
+              <StyledGridButton
+                variant="outlined"
+                color="inherit"
+                size="large"
+                onClick={() => router.push('/about')}
+              >
+                <Typography variant="h5">关于Animal Flow中国</Typography>
+              </StyledGridButton>
+            </StyledGridAction>
+          </StyledGridItem>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Image src="/assets/images/home/about_img_2.png" />
+          <StyledGridItem>
+            <Image src="/assets/images/home/about_img_2.png" />
+            <StyledGridAction>
+              <StyledGridButton
+                variant="outlined"
+                color="inherit"
+                size="large"
+                onClick={() => router.push('/about')}
+              >
+                <Typography variant="h5">我们的优势</Typography></StyledGridButton>
+            </StyledGridAction>
+          </StyledGridItem>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Image src="/assets/images/home/about_img_3.png" />
+          <StyledGridItem>
+            <Image src="/assets/images/home/about_img_3.png" />
+            <StyledGridAction>
+              <StyledGridButton
+                variant="outlined"
+                color="inherit"
+                size="large"
+                onClick={() => router.push('/about')}
+              >
+                <Typography variant="h5">培训报名指南</Typography></StyledGridButton>
+            </StyledGridAction>
+          </StyledGridItem>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Image src="/assets/images/home/about_img_4.png" />
+          <StyledGridItem>
+            <Image src="/assets/images/home/about_img_4.png" />
+            <StyledGridAction>
+              <StyledGridButton
+                variant="outlined"
+                color="inherit"
+                size="large"
+                onClick={() => router.push('/about')}
+              >
+                <Typography variant="h5">联系我们</Typography></StyledGridButton>
+            </StyledGridAction>
+          </StyledGridItem>
         </Grid>
       </Grid>
 

@@ -182,9 +182,14 @@ function Description() {
 
 function HeroVideo() {
   return (
-    <video autoPlay muted loop style={{ width: '100vw', height: '100%', minWidth: '100%', minHeight: '100%', verticalAlign: 'center', objectFit: 'cover' }}>
+    <video
+      autoPlay
+      muted
+      loop
+      style={{ width: '100vw', height: '100%', minWidth: '100%', minHeight: '100%', verticalAlign: 'center', objectFit: 'cover' }}
+      poster="https://animalflow.com/wp-content/uploads/2022/06/homeMovieStillImage-1.jpg"
+    >
       <source src="https://animalflow.com/wp-content/uploads/2022/07/20s_hero_1-540p.mp4;" type="video/mp4" />
-      <img src="https://animalflow.com/wp-content/uploads/2022/06/homeMovieStillImage-1.jpg" alt="" />
     </video>
   )
 }

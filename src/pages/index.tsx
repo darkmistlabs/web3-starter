@@ -1,11 +1,8 @@
-import { useState } from 'react'
 import Head from 'next/head'
-import type { NextPage } from 'next'
 import MainLayout from '../layouts/main'
-import { Box, Container, Divider, Stack, Typography } from '@mui/material'
-import HomeHero from '../sections/home/Hero'
-import HomeAbout from '../sections/home/About'
-import HomeMaster from '../sections/home/Master'
+import HomeHero from '../sections/home/HomeHero'
+import HomeAbout from '../sections/home/HomeAbout'
+import HomeMaster from '../sections/home/HomeMaster'
 
 interface Props {
   navs: any[]

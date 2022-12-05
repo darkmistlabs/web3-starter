@@ -10,14 +10,14 @@ const navConfig = [
     path: '/',
   },
   {
-    title: '关于',
+    title: '关于我们',
     icon: <Iconify icon="ic:round-grain" />,
-    path: '/',
+    path: '/about',
   },
   {
     title: '认证教练',
     icon: <Iconify icon="eva:book-open-fill" />,
-    path: '/',
+    path: '/master',
   },
 ];
 

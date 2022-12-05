@@ -1,5 +1,6 @@
 import _mock from '../_mock';
 import { randomInArray } from '../utils';
+import Iconify from '../../components/iconify';
 
 // ----------------------------------------------------------------------
 
@@ -10,6 +11,12 @@ export const _carouselsMembers = [...Array(6)].map((_, index) => ({
   avatar: `/assets/images/portraits/portrait_${index + 1}.jpg`,
 }));
 
+export const _carouselsMember = {
+  id: _mock.id(0),
+  name: _mock.name.fullName(0),
+  role: _mock.role(0),
+  avatar: `/assets/images/portraits/portrait_${0 + 1}.jpg`,
+}
 // ----------------------------------------------------------------------
 
 export const _faqs = [...Array(8)].map((_, index) => ({
@@ -39,18 +46,33 @@ export const _skills = [...Array(3)].map((_, index) => ({
 
 // ----------------------------------------------------------------------
 
-export const _contacts = [...Array(20)].map((_, index) => ({
-  id: _mock.id(index),
-  name: _mock.name.fullName(index),
-  username: _mock.name.fullName(index),
-  avatar: _mock.image.avatar(index),
-  address: _mock.address.fullAddress(index),
-  phone: _mock.phoneNumber(index),
-  email: _mock.email(index),
-  lastActivity: _mock.time(index),
-  status: randomInArray(['online', 'offline', 'away', 'busy']),
-  role: _mock.role(index),
-}));
+export const _contacts = [
+  {
+    icon: 'fluent-emoji-high-contrast:telephone',
+    label: '电话',
+    value: '18088888888',
+  },
+  {
+    icon: 'ic:round-email',
+    label: '邮箱',
+    value: 'hello@animalflowchina.com',
+  },
+  {
+    icon: 'material-symbols:location-on',
+    label: '地址',
+    value: '上海市崇明区兴工路37号7号楼1612室',
+  },
+  {
+    icon: 'ic:baseline-wechat',
+    label: '微信',
+    value: 'animalflowchina',
+  },
+  {
+    icon: 'mdi:sina-weibo',
+    label: '微博',
+    value: 'animalflowchina',
+  }
+]
 
 // ----------------------------------------------------------------------
 

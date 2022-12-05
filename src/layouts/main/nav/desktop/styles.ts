@@ -20,7 +20,7 @@ export const ListItem = styled(ListItemButton, {
     height: 6,
     left: -14,
     opacity: 0.48,
-    backgroundColor: 'currentColor',
+    backgroundColor: theme.palette.primary.lighter,
   };
 
   return {
