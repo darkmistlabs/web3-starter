@@ -95,7 +95,7 @@ function Description() {
       </m.div>
 
       <m.div variants={varFade().in}>
-        <Stack spacing={4} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ my: 5 }}>
+        <Stack spacing={4} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ mt: 5, mb: 20 }}>
           <Stack alignItems="center" spacing={2}>
             <NextLink href={`/`} passHref>
               <Button
@@ -115,18 +115,8 @@ function Description() {
               </Button>
             </NextLink>
           </Stack>
-
         </Stack>
       </m.div>
-
-      <Stack sx={{ textAlign: 'center', opacity: 0.5 }}>
-        <m.div variants={varFade().in}>
-          <IconButton>
-            {/* <ArrowDown /> */}
-          </IconButton>
-        </m.div>
-      </Stack>
-
     </StyledDescription>
   );
 }
